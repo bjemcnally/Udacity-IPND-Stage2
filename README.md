@@ -11,8 +11,4 @@ First submitted:
 
 Met specifications:
 
-####Description of repository contents:
-
-- **stage2_project.py** is the most recent version of my project
-- **stage2_project_without_difficulty.py** an earlier version that did not allow the user to choose difficulty level
 
