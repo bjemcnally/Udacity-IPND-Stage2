@@ -14,6 +14,5 @@ Met specifications:
 ####Description of repository contents:
 
 - **stage2_project.py** is the most recent version of my project
-- **stage2_project_test.py** is used to test stubs and component functions as I go
-- **fill-in-the-blanks files** were supplied by Udacity in project prompt
+- **stage2_project_without_difficulty.py** an earlier version that did not allow the user to choose difficulty level
 
