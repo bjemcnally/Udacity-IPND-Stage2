@@ -7,7 +7,7 @@
 
 Started: 10/25/2016
 
-First submitted:
+First submitted: 10/26/2016
 
 Met specifications:
 
