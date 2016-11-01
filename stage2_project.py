@@ -1,10 +1,11 @@
-""" IPND Stage 2 Final Project by bjemcnally version 1.2 """
+""" IPND Stage 2 Final Project by bjemcnally version 1.2.1 """
 
 """
 Version 1: original upload
 Version 1.1: fixed most comments
 Version 1.2: fixed all required and many suggested including running
              through pep8online.com
+Version 1.2.1: fixed remaining 'magic numbers'
 """
 
 """ Level 1: provided by Udacity """
@@ -77,6 +78,12 @@ difficulty = raw_input(
     "\nHard = 1 guess"
     "\nWould you like to play Easy, Medium, or Hard? ")
 
+""" If user chooses Easy, they are prompted with a hint after 
+their 3rd and 4th failed attempts as defined below and utilized
+in ask_and_check function """
+first_hint = 3
+second_hint = 4
+
 
 def difficulty_value(difficulty):
     """
@@ -91,9 +98,9 @@ def difficulty_value(difficulty):
             "\nWhoops! Please type in Easy, Medium, or Hard: ")
     if difficulty.lower() == difficulty_options[0]:
         attempts = 5
-    if difficulty.lower() == difficulty_options[1]:
+    elif difficulty.lower() == difficulty_options[1]:
         attempts = 3
-    if difficulty.lower() == difficulty_options[2]:
+    elif difficulty.lower() == difficulty_options[2]:
         attempts = 1
     return attempts
 
@@ -107,9 +114,9 @@ def get_answers(level):
     correct = []
     if level == 1:
         correct = correct_answers1
-    if level == 2:
+    elif level == 2:
         correct = correct_answers2
-    if level == 3:
+    elif level == 3:
         correct = correct_answers3
     return correct
 
@@ -137,13 +144,13 @@ def ask_and_check(blank_number, level, allowed_attempts):
         if attempt == allowed_attempts:
             print "\nWrong. Game over!"
             exit()
-        if attempt < 3:
+        elif attempt < first_hint:
             print "Nope, try again!"
-        if attempt == 3:
+        elif attempt == first_hint:
             print ("Uh oh, this isn't going well. \nHere's a hint: The first"
                    " letter of the correct answer is " +
                    correct_answers[index][0])
-        if attempt == 4:
+        elif attempt == second_hint:
             index_last_character = len(correct_answers[index]) - 1
             print ("Oh no, only one more guess. \nHere's another hint: The"
                    " last letter of the correct answer is " +
@@ -157,8 +164,8 @@ def quiz(starting_string, number_of_blanks, level, allowed_attempts):
     output: start_string with correct replacements
     additional note: answer formatting is maintained from user input
     """
-    print "In the following paragraph, fill in the blanks with"
-    " appropriate keywords:\n"
+    print ("In the following paragraph, fill in the blanks with"
+           " appropriate keywords:\n")
     print starting_string
     blank = 1
     while blank <= number_of_blanks:
@@ -184,11 +191,11 @@ def initiate_quiz(chosen_level, chosen_difficulty):
         """ start level 1 """
         quiz(level1_string, level1_number_of_blanks, int(chosen_level),
              allowed_attempts)
-    if chosen_level == level_options[1]:
+    elif chosen_level == level_options[1]:
         """ start level 2 """
         quiz(level2_string, level2_number_of_blanks, int(chosen_level),
              allowed_attempts)
-    if chosen_level == level_options[2]:
+    elif chosen_level == level_options[2]:
         """ start level 3 """
         quiz(level3_string, level3_number_of_blanks, int(chosen_level),
              allowed_attempts)
