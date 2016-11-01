@@ -9,6 +9,6 @@ Started: 10/25/2016
 
 First submitted: 10/26/2016
 
-Met specifications:
+Met specifications: 10/31/2016
 
 
